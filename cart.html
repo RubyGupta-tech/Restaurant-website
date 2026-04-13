@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Spice Garden Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .cart-page { padding-top: 120px; min-height: 80vh; }
+        .cart-container { max-width: 800px; margin: 0 auto; background: var(--bg-surface); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; }
+        .cart-item { display: grid; grid-template-columns: 2fr 1fr 1fr 0.5fr; gap: 20px; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .item-controls { display: flex; align-items: center; gap: 10px; }
+        .qty-btn { background: rgba(255, 255, 255, 0.1); border: none; color: white; width: 30px; height: 30px; border-radius: 5px; cursor: pointer; transition: 0.2s; }
+        .qty-btn:hover { background: var(--teal-primary); }
+        .cart-summary { margin-top: 3rem; background: rgba(0,0,0,0.2); border-radius: 15px; padding: 1.5rem; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 1.1rem; }
+        .summary-row.total { font-size: 1.5rem; font-weight: 800; color: var(--gold); border-top: 1px solid rgba(255,255,255,0.1); pt-1: 1rem; margin-top: 1rem; padding-top: 1rem; }
+        .empty-cart { text-align: center; padding: 4rem 0; }
+        .empty-cart h3 { margin-bottom: 2rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Spice Garden Logo" class="logo-img">
+                Spice<span>Garden</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li class="nav-cart"><a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <div class="cart-container">
+                <div class="cart-header">
+                    <h2>Your <span class="highlight">Order</span></h2>
+                    <a href="index.html#menu" class="btn btn-sm btn-outline">Back to Menu</a>
+                </div>
+
+                <div id="cart-items-list">
+                    <!-- Dynamic Cart Items via JS -->
+                </div>
+
+                <div class="cart-summary" id="order-summary">
+                    <!-- Dynamic Summary via JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="cart.js"></script>
+    <script>
+        function renderCart() {
+            const listElement = document.getElementById('cart-items-list');
+            const summaryElement = document.getElementById('order-summary');
+            const cartItems = getCart();
+
+            if (cartItems.length === 0) {
+                listElement.innerHTML = `
+                    <div class="empty-cart">
+                        <h3>Your cart is empty</h3>
+                        <a href="index.html#menu" class="btn btn-primary">Start Adding Items</a>
+                    </div>
+                `;
+                summaryElement.style.display = 'none';
+                return;
+            }
+
+            summaryElement.style.display = 'block';
+            let listHtml = '';
+            cartItems.forEach((item, index) => {
+                listHtml += `
+                    <div class="cart-item">
+                        <div>
+                            <h4>${item.name}</h4>
+                            <p class="highlight" style="font-size: 0.9rem">$${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="item-controls">
+                            <button class="qty-btn" onclick="adjustQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="qty-btn" onclick="adjustQuantity(${index}, 1)">+</button>
+                        </div>
+                        <div style="text-align: right; font-weight: 600;">$${(item.price * item.quantity).toFixed(2)}</div>
+                        <div style="text-align: right;">
+                            <button onclick="removeFromCart(${index})" style="background: none; border: none; color: #ef4444; cursor: pointer;">✕</button>
+                        </div>
+                    </div>
+                `;
+            });
+            listElement.innerHTML = listHtml;
+
+            const totals = calculateTotals();
+            summaryElement.innerHTML = `
+                <div class="summary-row"><span>Subtotal:</span><span>$${totals.subtotal}</span></div>
+                <div class="summary-row"><span>Tax (8%):</span><span>$${totals.tax}</span></div>
+                <div class="summary-row total"><span>Grand Total:</span><span>$${totals.total}</span></div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="alert('Thank you for your order! In a real scenario, this would redirect to payment or WhatsApp.')">Place Order</button>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+        });
+    </script>
+</body>
+</html>

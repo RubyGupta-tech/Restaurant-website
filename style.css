@@ -81,6 +81,16 @@ img {
     box-shadow: 0 10px 20px var(--teal-glow);
 }
 
+.btn-sm {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+}
+
+.btn-add {
+    margin-top: 1rem;
+    width: 100%;
+}
+
 .btn-outline {
     background: transparent;
     border: 2px solid var(--teal-primary);
@@ -112,16 +122,24 @@ img {
     align-items: center;
 }
 
-.logo-img {
-    height: 60px;
-    width: auto;
-    display: block;
-    mix-blend-mode: color-dodge; /* To blends the white-background-generated logo with the dark nav */
-}
-
 .logo {
     display: flex;
     align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--teal-primary);
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    mix-blend-mode: color-dodge;
 }
 
 .nav-content nav ul {
@@ -132,6 +150,11 @@ img {
 
 .nav-content nav ul li a:hover {
     color: var(--teal-light);
+}
+
+.nav-cart a {
+    color: var(--gold) !important;
+    font-weight: 600;
 }
 
 .btn-cta {
