@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Garden Restaurant | Delicious Food, Delivered Fresh</title>
+    <meta name="description" content="Spice Garden Restaurant offers premium, fresh, and delicious food delivered to your doorstep. Explore our diverse menu from Starters to Desserts.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Spice<span>Garden</span></a>
+            
+            <!-- Mobile Menu Toggle (Checkbox Hack) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#menu" class="btn-cta">Order Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="fade-in">Delicious Food,<br><span class="highlight">Delivered Fresh</span></h1>
+                <p class="fade-in">Experience the authentic taste of premium spices and fresh ingredients, crafted with passion and served with love.</p>
+                <div class="hero-btns fade-in">
+                    <a href="#menu" class="btn btn-primary">Order Now</a>
+                    <a href="#contact" class="btn btn-outline">Reservations</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Signature <span class="highlight">Menu</span></h2>
+                    <p>Explore our carefully curated categories</p>
+                </div>
+
+                <div class="menu-grid">
+                    <!-- Starters -->
+                    <div class="menu-category">
+                        <div class="category-img">
+                            <img src="assets/starters.png" alt="Starters">
+                            <div class="category-overlay">
+                                <h3>Starters</h3>
+                            </div>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Paneer Tikka</span>
+                                    <span class="item-price">$12.99</span>
+                                </div>
+                                <p>Marinated cottage cheese grilled to perfection.</p>
+                            </li>
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Vegetable Samosa</span>
+                                    <span class="item-price">$8.50</span>
+                                </div>
+                                <p>Crispy pastry filled with spiced potatoes and peas.</p>
+                            </li>
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Chicken 65</span>
+                                    <span class="item-price">$14.00</span>
+                                </div>
+                                <p>Spicy, deep-fried chicken tempered with curry leaves.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Main Course -->
+                    <div class="menu-category">
+                        <div class="category-img">
+                            <img src="assets/main.png" alt="Main Course">
+                            <div class="category-overlay">
+                                <h3>Main Course</h3>
+                            </div>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Butter Chicken</span>
+                                    <span class="item-price">$22.00</span>
+                                </div>
+                                <p>Classic creamy tomato-based chicken curry.</p>
+                            </li>
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Lamb Rogan Josh</span>
+                                    <span class="item-price">$24.50</span>
+                                </div>
+                                <p>Slow-cooked lamb in a traditional Kashmiri sauce.</p>
+                            </li>
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Dal Makhani</span>
+                                    <span class="item-price">$18.00</span>
+                                </div>
+                                <p>Black lentils simmered overnight with cream and butter.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Desserts -->
+                    <div class="menu-category">
+                        <div class="category-img">
+                            <img src="assets/desserts.png" alt="Desserts">
+                            <div class="category-overlay">
+                                <h3>Desserts</h3>
+                            </div>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Gulab Jamun</span>
+                                    <span class="item-price">$7.50</span>
+                                </div>
+                                <p>Warm milk dumplings in saffron sugar syrup.</p>
+                            </li>
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Mango Kulfi</span>
+                                    <span class="item-price">$8.00</span>
+                                </div>
+                                <p>Traditional Indian ice cream with fresh mango pulp.</p>
+                            </li>
+                            <li>
+                                <div class="item-info">
+                                    <span class="item-name">Rasmalai</span>
+                                    <span class="item-price">$9.00</span>
+                                </div>
+                                <p>Soft cheese patties in sweetened, thickened milk.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <span class="sub-title">Our Story</span>
+                    <h2>A Legacy of Spices & <span class="highlight">Tradition</span></h2>
+                    <p>Started in 1995, Spice Garden began as a small family kitchen with a big dream: to bring the authentic flavors of our heritage to your table. We believe that food is more than just sustenance; it's a celebration of culture and community.</p>
+                    <p>Every dish we serve is prepared with the freshest seasonal ingredients and hand-ground spices, ensuring an explosion of flavor in every bite. Our chefs blend traditional techniques with modern presentation to create a truly unique dining experience.</p>
+                    <a href="#contact" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/hero.png" alt="Our Kitchen">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Visit <span class="highlight">Us</span></h2>
+                        <p>We'd love to host you at Spice Garden or deliver to your door.</p>
+                        
+                        <div class="info-box">
+                            <div class="info-item">
+                                <h4>Address</h4>
+                                <p>123 Gourmet Lane, Foodie District<br>Culinary City, CC 54321</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Hours</h4>
+                                <p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri - Sun: 11:00 AM - 11:30 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <h3>Reserve a Table</h3>
+                        <form class="contact-form" onsubmit="return false;">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <select required>
+                                <option value="" disabled selected>Select Guests</option>
+                                <option>2 Persons</option>
+                                <option>4 Persons</option>
+                                <option>6+ Persons</option>
+                            </select>
+                            <textarea placeholder="Special Requests"></textarea>
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <a href="#" class="logo">Spice<span>Garden</span></a>
+                <p>Authentic flavors, modern vibes.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <span>FB</span>
+                    <span>IG</span>
+                    <span>TW</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Spice Garden Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
