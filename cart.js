@@ -30,8 +30,37 @@ function addToCart(name, price) {
     saveCart();
     updateCartCount();
     
-    // Feedback (Optional: show a small toast)
-    alert(`${name} added to cart!`);
+    // Professional Toast Feedback
+    showToast(`${name} added to cart!`);
+}
+
+// Custom Toast System
+function showToast(message) {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `
+        <div class="toast-icon">✓</div>
+        <div class="toast-msg">${message}</div>
+    `;
+
+    container.appendChild(toast);
+
+    // Trigger animation
+    setTimeout(() => toast.classList.add('show'), 100);
+
+    // Auto-remove
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400);
+    }, 3000);
 }
 
 // Save Cart to LocalStorage
