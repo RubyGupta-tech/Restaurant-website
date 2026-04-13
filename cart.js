@@ -115,3 +115,9 @@ function calculateTotals() {
         total: total.toFixed(2)
     };
 }
+
+function clearCart() {
+    cart = [];
+    saveCart();
+    updateCartCount();
+}
