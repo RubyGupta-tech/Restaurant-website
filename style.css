@@ -112,14 +112,16 @@ img {
     align-items: center;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: -1px;
+.logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    mix-blend-mode: color-dodge; /* To blends the white-background-generated logo with the dark nav */
 }
 
-.logo span {
-    color: var(--teal-primary);
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .nav-content nav ul {
